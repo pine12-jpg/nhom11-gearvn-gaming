@@ -1,6 +1,6 @@
 import { formatDate } from "../utils/format";
 
-// ⚠️ Sửa 2 dòng dưới thành thông tin liên hệ thật của cửa hàng/nhóm
+
 const CONTACT_EMAIL = "cskh@gvngaming.vn";
 const CONTACT_ZALO = "1900 5301";
 
