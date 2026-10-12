@@ -48,8 +48,16 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Đã có lỗi xảy ra ở server. Vui lòng thử lại." });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🎮 GVN Gaming API đang chạy tại http://localhost:${PORT}`);
-  console.log(`   Tài khoản admin demo: admin@gvngaming.vn / Admin@123`);
-  console.log(`   Tài khoản khách demo: khach@example.com / Khach@123\n`);
-});
+const { init: initDB } = require("./src/db");
+initDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`\n🎮 GVN Gaming API đang chạy tại http://localhost:${PORT}`);
+      console.log(`   Tài khoản admin demo: admin@gvngaming.vn / Admin@123`);
+      console.log(`   Tài khoản khách demo: khach@example.com / Khach@123\n`);
+    });
+  })
+  .catch((err) => {
+    console.error("Không khởi động được cơ sở dữ liệu:", err);
+    process.exit(1);
+  });
