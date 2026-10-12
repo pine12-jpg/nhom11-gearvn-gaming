@@ -1,0 +1,1104 @@
+{
+  "_counters": {
+    "users": 2,
+    "products": 29,
+    "orders": 0,
+    "order_items": 0,
+    "reviews": 3,
+    "tradein_requests": 0,
+    "news": 3,
+    "audit_logs": 33,
+    "cart_items": 0
+  },
+  "categories": [
+    {
+      "id": 1,
+      "slug": "laptop-gaming",
+      "name": "Laptop Gaming",
+      "icon": "💻"
+    },
+    {
+      "id": 2,
+      "slug": "pc-gaming",
+      "name": "PC Gaming (Build sẵn)",
+      "icon": "🖥️"
+    },
+    {
+      "id": 3,
+      "slug": "man-hinh",
+      "name": "Màn hình",
+      "icon": "🖵"
+    },
+    {
+      "id": 4,
+      "slug": "ban-phim",
+      "name": "Bàn phím cơ",
+      "icon": "⌨️"
+    },
+    {
+      "id": 5,
+      "slug": "chuot",
+      "name": "Chuột gaming",
+      "icon": "🖱️"
+    },
+    {
+      "id": 6,
+      "slug": "tai-nghe",
+      "name": "Tai nghe gaming",
+      "icon": "🎧"
+    },
+    {
+      "id": 7,
+      "slug": "ghe-ban",
+      "name": "Ghế - Bàn Gaming",
+      "icon": "🪑"
+    },
+    {
+      "id": 8,
+      "slug": "linh-kien",
+      "name": "Linh kiện PC",
+      "icon": "🔧"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "ASUS ROG"
+    },
+    {
+      "id": 2,
+      "name": "MSI"
+    },
+    {
+      "id": 3,
+      "name": "Acer Predator"
+    },
+    {
+      "id": 4,
+      "name": "Lenovo Legion"
+    },
+    {
+      "id": 5,
+      "name": "Dell Alienware"
+    },
+    {
+      "id": 6,
+      "name": "Logitech G"
+    },
+    {
+      "id": 7,
+      "name": "Razer"
+    },
+    {
+      "id": 8,
+      "name": "SteelSeries"
+    },
+    {
+      "id": 9,
+      "name": "Corsair"
+    },
+    {
+      "id": 10,
+      "name": "AKKO"
+    },
+    {
+      "id": 11,
+      "name": "HyperX"
+    },
+    {
+      "id": 12,
+      "name": "LG"
+    },
+    {
+      "id": 13,
+      "name": "Samsung"
+    },
+    {
+      "id": 14,
+      "name": "AOC"
+    },
+    {
+      "id": 15,
+      "name": "Gigabyte"
+    },
+    {
+      "id": 16,
+      "name": "DXRacer"
+    },
+    {
+      "id": 17,
+      "name": "E-Dra"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "ASUS ROG Strix G16 (2024) G614",
+      "brand": 1,
+      "category": 1,
+      "price": 34990000,
+      "salePrice": 32990000,
+      "cpu": "Intel Core i7-13650HX",
+      "gpu": "NVIDIA RTX 4060 8GB",
+      "ram": "16GB DDR5",
+      "storage": "512GB SSD NVMe",
+      "screen": "16\" QHD+ 165Hz",
+      "description": "Laptop gaming hiệu năng cao dành cho game thủ và sáng tạo nội dung, tản nhiệt ROG Intelligent Cooling, bàn phím RGB per-key.",
+      "stock": 12,
+      "featured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBgaQxK8LGFF3tnczv37x-qcYDiA6a1CrCkcP3soez0Q&s=10",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 2,
+      "name": "MSI Katana 15 B13V",
+      "brand": 2,
+      "category": 1,
+      "price": 32990000,
+      "salePrice": 29990000,
+      "cpu": "Intel Core i7-13620H",
+      "gpu": "NVIDIA RTX 4070 8GB",
+      "ram": "16GB DDR5",
+      "storage": "1TB SSD NVMe",
+      "screen": "15.6\" FHD 144Hz",
+      "description": "Thiết kế mỏng nhẹ, hiệu năng mạnh mẽ với RTX 4070, phù hợp vừa chiến game vừa làm việc.",
+      "stock": 8,
+      "featured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJFh0qvaesNU7rS-kiNHhvDsiwkxmqEHqvShRRNyafw&s=10",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 3,
+      "name": "Acer Predator Helios Neo 16",
+      "brand": 3,
+      "category": 1,
+      "price": 37490000,
+      "salePrice": null,
+      "cpu": "Intel Core i9-13900HX",
+      "gpu": "NVIDIA RTX 4060 8GB",
+      "ram": "16GB DDR5",
+      "storage": "512GB SSD NVMe",
+      "screen": "16\" WQXGA 165Hz",
+      "description": "Chip i9 hiệu năng khủng, hệ thống tản nhiệt kép Predator CoolBoost, màn hình sắc nét.",
+      "stock": 6,
+      "featured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIX0HXi6uJNeJpXYqMyEdc6vJy_nrqVtF6X-jYj3PmJQ&s",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 4,
+      "name": "Lenovo Legion 5 Pro",
+      "brand": 4,
+      "category": 1,
+      "price": 31990000,
+      "salePrice": 28990000,
+      "cpu": "AMD Ryzen 7 7745HX",
+      "gpu": "NVIDIA RTX 4060 8GB",
+      "ram": "16GB DDR5",
+      "storage": "512GB SSD NVMe",
+      "screen": "16\" QHD 165Hz",
+      "description": "Cấu hình AMD mạnh mẽ, màn hình QHD màu sắc chuẩn xác, loa Harman Kardon.",
+      "stock": 10,
+      "featured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUBQB-GSzQbLeD6FmPDQHQB1zG0w2f9pUs71gbMppwVQ&s=10",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 5,
+      "name": "ASUS TUF Gaming A15",
+      "brand": 1,
+      "category": 1,
+      "price": 18990000,
+      "salePrice": 17490000,
+      "cpu": "AMD Ryzen 5 7535HS",
+      "gpu": "NVIDIA RTX 3050 6GB",
+      "ram": "8GB DDR5",
+      "storage": "512GB SSD NVMe",
+      "screen": "15.6\" FHD 144Hz",
+      "description": "Laptop gaming phổ thông, độ bền chuẩn quân đội MIL-STD-810H, giá tốt cho sinh viên.",
+      "stock": 20,
+      "featured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsxXK7KJwZNzvP2Cc_IvvCGXNwpRe3zdppAlc4zNKAzw&s=10",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 6,
+      "name": "Dell Alienware m16 R2",
+      "brand": 5,
+      "category": 1,
+      "price": 54990000,
+      "salePrice": null,
+      "cpu": "Intel Core i9-14900HX",
+      "gpu": "NVIDIA RTX 4070 8GB",
+      "ram": "32GB DDR5",
+      "storage": "1TB SSD NVMe",
+      "screen": "16\" QHD+ 240Hz",
+      "description": "Dòng cao cấp Alienware, màn hình 240Hz siêu mượt, thiết kế đặc trưng khác biệt.",
+      "stock": 4,
+      "featured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmi_u7oKPayqxT-MeA_yuOzScC5lROFQQiCc_9sLPxoA&s=10",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 7,
+      "name": "PC GVN Intel i5 RTX 4060",
+      "brand": 15,
+      "category": 2,
+      "price": 21990000,
+      "salePrice": 20490000,
+      "cpu": "Intel Core i5-13400F",
+      "gpu": "NVIDIA RTX 4060 8GB",
+      "ram": "16GB DDR4",
+      "storage": "500GB SSD NVMe",
+      "screen": "—",
+      "description": "Bộ PC build sẵn tối ưu tản nhiệt và luồng khí, chiến tốt mọi tựa game eSports và AAA ở FHD.",
+      "stock": 15,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7QcKACjRsjlQY-lFaX5t5etREwQpKFhMcSPfipeNjow&s=10"
+    },
+    {
+      "id": 8,
+      "name": "PC GVN Ryzen 5 RTX 4060 Ti",
+      "brand": 15,
+      "category": 2,
+      "price": 26990000,
+      "salePrice": null,
+      "cpu": "AMD Ryzen 5 7500F",
+      "gpu": "NVIDIA RTX 4060 Ti 8GB",
+      "ram": "16GB DDR5",
+      "storage": "1TB SSD NVMe",
+      "screen": "—",
+      "description": "Cấu hình AMD mới nhất, hiệu năng/giá tốt, sẵn sàng nâng cấp về sau.",
+      "stock": 9,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK2HmR0WhfOoAnyBgbBJAkVRa494zhriiXj6qaTyRxxA&s"
+    },
+    {
+      "id": 9,
+      "name": "PC GVN Intel i7 RTX 4070 Super",
+      "brand": 15,
+      "category": 2,
+      "price": 39990000,
+      "salePrice": 37990000,
+      "cpu": "Intel Core i7-13700F",
+      "gpu": "NVIDIA RTX 4070 Super 12GB",
+      "ram": "32GB DDR5",
+      "storage": "1TB SSD NVMe",
+      "screen": "—",
+      "description": "Chiến mọi tựa game ở độ phân giải 2K max setting, dư sức stream/render.",
+      "stock": 7,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACsVU9zJbU7az8QD7ZzrYxslrFpvgc8je5kVLlXBzSw&s=10"
+    },
+    {
+      "id": 10,
+      "name": "PC GVN Ryzen 9 RTX 4080 Super",
+      "brand": 15,
+      "category": 2,
+      "price": 64990000,
+      "salePrice": null,
+      "cpu": "AMD Ryzen 9 7900X",
+      "gpu": "NVIDIA RTX 4080 Super 16GB",
+      "ram": "32GB DDR5",
+      "storage": "2TB SSD NVMe",
+      "screen": "—",
+      "description": "Cấu hình hi-end cho game thủ và creator chuyên nghiệp, chiến 4K mượt mà.",
+      "stock": 3,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXUyZHCSZMSWNG4HJHbkMMq8bEZ0HRRGSs0YTfp9IQDQ&s"
+    },
+    {
+      "id": 11,
+      "name": "LG UltraGear 27GP850",
+      "brand": 12,
+      "category": 3,
+      "price": 8490000,
+      "salePrice": 7690000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "27\" QHD Nano IPS 165Hz 1ms",
+      "description": "Màn hình chuẩn thi đấu, màu sắc chuẩn Nano IPS, hỗ trợ G-Sync/FreeSync.",
+      "stock": 18,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScJfZ04GHB8p_1roiUVpjO9Ib6rap-aby7DWkt4A-MfA&s=10"
+    },
+    {
+      "id": 12,
+      "name": "ASUS TUF Gaming VG27AQ",
+      "brand": 1,
+      "category": 3,
+      "price": 7990000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "27\" QHD IPS 165Hz 1ms",
+      "description": "Màn hình phổ biến nhất phân khúc, tấm nền IPS góc nhìn rộng.",
+      "stock": 14,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdXbsxi3jplJh_XDtEJ_AOnDSu6vSU4EY2eR47sLK76A&s=10"
+    },
+    {
+      "id": 13,
+      "name": "Samsung Odyssey G5",
+      "brand": 13,
+      "category": 3,
+      "price": 6990000,
+      "salePrice": 6290000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "32\" QHD VA cong 165Hz 1ms",
+      "description": "Màn hình cong 1000R đắm chìm, phù hợp game đua xe, hành động.",
+      "stock": 11,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBS8mrcyw4yvd4xtf_oJf8PyELHgo2Z5YmzKc4-dJyA&s=10"
+    },
+    {
+      "id": 14,
+      "name": "AOC 24G2SP",
+      "brand": 14,
+      "category": 3,
+      "price": 3490000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "24\" FHD IPS 165Hz 1ms",
+      "description": "Lựa chọn tiết kiệm cho dàn máy eSports, tần số quét cao.",
+      "stock": 25,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkhuja2JNa_ALVS8IwYLzOL8QtcjlW0_uCIhSImnln5Q&s=10"
+    },
+    {
+      "id": 15,
+      "name": "Logitech G Pro X Keyboard",
+      "brand": 6,
+      "category": 4,
+      "price": 2990000,
+      "salePrice": 2590000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Bàn phím cơ hotswap switch GX Blue Clicky, nhỏ gọn TKL cho pro-gamer.",
+      "stock": 22,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRN9aaa6N72Rg0Zs_7AW9GmtRm-zIq9rcQu_VUQzCR-rW765hraW7PuuUhaFsB6xJLPUvR3zTnPeHyypb4GBKOvpdrQOjk3lno3py1wSFqZrsSXcqB35ux8IzkHJgwBjkaxxcIsbwvjOA&usqp=CAc"
+    },
+    {
+      "id": 16,
+      "name": "Razer BlackWidow V4",
+      "brand": 7,
+      "category": 4,
+      "price": 3490000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Switch Green tactile, kê tay êm ái, đèn RGB Chroma 16.8 triệu màu.",
+      "stock": 16,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsuzrZDrG-n0Geddm9Q-yck2gryI2JHmKsQXVWui5Mg&s=10"
+    },
+    {
+      "id": 17,
+      "name": "AKKO 5075B Plus",
+      "brand": 10,
+      "category": 4,
+      "price": 2190000,
+      "salePrice": 1890000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Switch Cream Yellow êm mượt, gasket mount, được yêu thích trong cộng đồng bàn phím cơ.",
+      "stock": 30,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5yMa-eE2oEgpqWYQqNdn2QDU-nDARMXHHL7Uc7N8YSA&s=10"
+    },
+    {
+      "id": 18,
+      "name": "Corsair K70 RGB Pro",
+      "brand": 9,
+      "category": 4,
+      "price": 3790000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Khung nhôm cao cấp, switch Cherry MX Red, độ bền cao cho game thủ chuyên nghiệp.",
+      "stock": 9,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRqpflw-pZAyuqub2ZI5b98IHiEe8DxHHCFa1saRZe2w&s=10"
+    },
+    {
+      "id": 19,
+      "name": "Logitech G Pro X Superlight 2",
+      "brand": 6,
+      "category": 5,
+      "price": 3290000,
+      "salePrice": 2990000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Chuột không dây siêu nhẹ 60g, cảm biến HERO 2 32000 DPI, được pro-player FPS ưa chuộng.",
+      "stock": 20,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlBLsKuJ2lV6B1njgvLjTtkfApV4rfZusJbGmHKuebsw&s=10"
+    },
+    {
+      "id": 20,
+      "name": "Razer DeathAdder V3",
+      "brand": 7,
+      "category": 5,
+      "price": 1590000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Dáng cầm công thái học kinh điển, cảm biến Focus Pro 30K DPI.",
+      "stock": 28,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1qMWToROreulmE9ENusDl2VCAmv7sR482XRRNQetWw&s=10"
+    },
+    {
+      "id": 21,
+      "name": "SteelSeries Aerox 5 Wireless",
+      "brand": 8,
+      "category": 5,
+      "price": 2490000,
+      "salePrice": 2190000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Thiết kế tổ ong siêu nhẹ, 9 nút lập trình được, phù hợp game MOBA/MMO.",
+      "stock": 17,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtNzGjYXl65vvAulTCQn8Zbw2lgTiqct_8xWQU45Scaw&s=10"
+    },
+    {
+      "id": 22,
+      "name": "Corsair M75 Air Wireless",
+      "brand": 9,
+      "category": 5,
+      "price": 2290000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Trọng lượng chỉ 60g, pin 100 giờ, cảm biến quang học 26000 DPI.",
+      "stock": 13,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVRxOxT_93j4jfyz1JJuL8tHyLqIq9A1G8ZVxchRC9Tg&s"
+    },
+    {
+      "id": 23,
+      "name": "SteelSeries Arctis Nova 5",
+      "brand": 8,
+      "category": 6,
+      "price": 2890000,
+      "salePrice": 2590000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Âm thanh vòm 360°, kết nối không dây 2.4GHz + Bluetooth, mic AI khử ồn.",
+      "stock": 19,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSwuwfQd0_0_DePtdP1VtBQXsDvzD-U82OyDueDjHjpBRysyIsJUiJDvVeRGLZFwfymHihLqsOByiJo4XpiaBOwe4YC1YxfCNPpvrHYXW5C174GbSoAqbePVaOYtpsmol4RvvGvmg&usqp=CAc"
+    },
+    {
+      "id": 24,
+      "name": "HyperX Cloud III",
+      "brand": 11,
+      "category": 6,
+      "price": 1990000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Đệm tai êm ái đeo lâu không mỏi, driver 53mm âm bass mạnh mẽ.",
+      "stock": 24,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkGUaTg1sktzmQVB9xvTfi4ehYFpjBPdPIzoam9oH3Q&s=10"
+    },
+    {
+      "id": 25,
+      "name": "Razer BlackShark V2 X",
+      "brand": 7,
+      "category": 6,
+      "price": 1190000,
+      "salePrice": 990000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Nhẹ chỉ 240g, âm thanh định vị chính xác cho game FPS, giá sinh viên.",
+      "stock": 35,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQDU7V8hp4wM39H-rKv4BMKkM0r4qcqr33GlDD-c0tuj9k8N6hm3zsz5Vg9Kn8jsFJHU2a4dYNLuOy7zfGbtb-3abVUU5dBYLF4Cxkcn_zVCPyGURwsTd4igBRyYKmyjtK_p6o0xY4&usqp=CAc"
+    },
+    {
+      "id": 26,
+      "name": "Ghế Gaming DXRacer Air Series",
+      "brand": 16,
+      "category": 7,
+      "price": 6990000,
+      "salePrice": 6290000,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Chất liệu lưới thoáng khí, nâng đỡ cột sống, phù hợp ngồi lâu làm việc/chơi game.",
+      "stock": 8,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRbvU4FW42eMOgnMUGkKEwK_xppJZlijmYrjj6hrZ0lq023Pr2FciYnvxxEwu37yxCe3b9dMIKNj8bVazUfuPdQnmVdMI9VVHrwBGT7OAHx2H2cJWKpsuTskq8-hlEiKCNxdxVhOlVwc5U&usqp=CAc"
+    },
+    {
+      "id": 27,
+      "name": "Bàn Gaming E-Dra Motorized EGD003",
+      "brand": 17,
+      "category": 7,
+      "price": 5490000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Bàn nâng hạ độ cao bằng điện, khung thép chắc chắn, chịu tải 100kg.",
+      "stock": 6,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgAjvtrUHiRPxajLayXup-aVJFwx2I3Rs0kW7RZfZjTQ&s"
+    },
+    {
+      "id": 28,
+      "name": "VGA Gigabyte RTX 4070 Super WINDFORCE",
+      "brand": 15,
+      "category": 8,
+      "price": 16990000,
+      "salePrice": 15990000,
+      "cpu": "—",
+      "gpu": "NVIDIA RTX 4070 Super 12GB",
+      "ram": "—",
+      "storage": "—",
+      "screen": "—",
+      "description": "Card đồ họa hiệu năng cao, tản nhiệt 3 quạt WINDFORCE, chiến tốt mọi game ở 2K.",
+      "stock": 5,
+      "featured": true,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2O1M2uJqPRYR4xIdW96vgbWMikA4MiHHjO2yMZvLZ3A&s=10"
+    },
+    {
+      "id": 29,
+      "name": "RAM Corsair Vengeance 32GB (2x16GB) DDR5 6000MHz",
+      "brand": 9,
+      "category": 8,
+      "price": 2490000,
+      "salePrice": null,
+      "cpu": "—",
+      "gpu": "—",
+      "ram": "32GB DDR5 6000MHz",
+      "storage": "—",
+      "screen": "—",
+      "description": "Bộ kit RAM hiệu năng cao cho các dòng CPU Intel/AMD thế hệ mới.",
+      "stock": 21,
+      "featured": false,
+      "createdAt": "2026-10-06T02:14:32.539Z",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS7XQx8Ni9qNgQ-kEjb94mGFeEwL3L-mhD2Blf6P8jigKwxORcLAk-xspfXmg5pxdouc6Pc1SB6YpiUY_DpiTX87lpLvSPAxKFOoqu5IkO08LO4H_5rMoKLGfF1HjU9gIpqg24RgQ&usqp=CAc"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Quản trị viên",
+      "email": "admin@gvngaming.vn",
+      "phone": "0900000000",
+      "passwordHash": "$2a$08$VEe0cDN8xv7s8Z3kPl3w7eqy3ynOqR9QUs95pfqphgCOAvNycdgau",
+      "role": "admin",
+      "address": "",
+      "isHssv": false,
+      "locked": false,
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn Khách",
+      "email": "khach@example.com",
+      "phone": "0912345678",
+      "passwordHash": "$2a$08$kkiVrSJX7h0za3BZT2ou9.EmvnH8lpfPkrqYcmblHD4rJZcBG/4xy",
+      "role": "customer",
+      "address": "123 Lê Lợi, Quận 1, TP.HCM",
+      "isHssv": false,
+      "locked": false,
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    }
+  ],
+  "cart_items": [],
+  "orders": [],
+  "order_items": [],
+  "reviews": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Máy chạy mượt, tản nhiệt tốt, đóng gói cẩn thận. Rất hài lòng!",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Cấu hình mạnh nhưng hơi nặng khi mang đi học.",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    },
+    {
+      "id": 3,
+      "productId": 18,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Gõ rất đã tay, âm thanh switch nghe thích.",
+      "createdAt": "2026-10-06T02:14:32.539Z"
+    }
+  ],
+  "vouchers": [
+    {
+      "code": "GVNGAME10",
+      "type": "percent",
+      "value": 10,
+      "minOrder": 5000000,
+      "maxDiscount": 1000000,
+      "active": true
+    },
+    {
+      "code": "FREESHIP",
+      "type": "amount",
+      "value": 30000,
+      "minOrder": 0,
+      "maxDiscount": 30000,
+      "active": true
+    },
+    {
+      "code": "SINHVIEN50K",
+      "type": "amount",
+      "value": 50000,
+      "minOrder": 2000000,
+      "maxDiscount": 50000,
+      "active": true
+    }
+  ],
+  "tradein_requests": [],
+  "showrooms": [
+    {
+      "id": 1,
+      "name": "GVN Gaming - Quận 1",
+      "address": "212 Nguyễn Trãi, P. Nguyễn Cư Trinh, Quận 1, TP.HCM",
+      "hours": "8:30 - 21:30 (Thứ 2 - Chủ nhật)",
+      "phone": "1900 5301"
+    },
+    {
+      "id": 2,
+      "name": "GVN Gaming - Quận 10",
+      "address": "97 Hồ Thị Kỷ, P.1, Quận 10, TP.HCM",
+      "hours": "8:30 - 21:30 (Thứ 2 - Chủ nhật)",
+      "phone": "1900 5301"
+    },
+    {
+      "id": 3,
+      "name": "GVN Gaming - Thủ Đức",
+      "address": "234 Kha Vạn Cân, P. Hiệp Bình Chánh, TP. Thủ Đức",
+      "hours": "8:30 - 21:30 (Thứ 2 - Chủ nhật)",
+      "phone": "1900 5301"
+    },
+    {
+      "id": 4,
+      "name": "GVN Gaming - Cầu Giấy, Hà Nội",
+      "address": "88 Trần Thái Tông, Cầu Giấy, Hà Nội",
+      "hours": "8:30 - 21:30 (Thứ 2 - Chủ nhật)",
+      "phone": "1800 6975"
+    },
+    {
+      "id": 5,
+      "name": "GVN Gaming - Đống Đa, Hà Nội",
+      "address": "45 Thái Hà, Đống Đa, Hà Nội",
+      "hours": "8:30 - 21:30 (Thứ 2 - Chủ nhật)",
+      "phone": "1800 6975"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "So sánh RTX 4060 vs RTX 4060 Ti: Nên chọn laptop nào cho tầm giá 30 triệu?",
+      "summary": "Phân tích hiệu năng thực tế và mức giá để chọn ra chiếc laptop gaming phù hợp nhất tầm 30 triệu đồng.",
+      "content": "Ở tầm giá 30 triệu đồng, người dùng thường phân vân giữa các laptop trang bị RTX 4060 và RTX 4060 Ti. Bài viết tổng hợp benchmark ở nhiều tựa game phổ biến, đồng thời phân tích khả năng tản nhiệt, độ ồn và thời lượng pin để đưa ra khuyến nghị phù hợp với từng nhu cầu sử dụng.",
+      "coverIcon": "📰",
+      "author": "Đội ngũ biên tập",
+      "createdAt": "2026-06-02"
+    },
+    {
+      "id": 2,
+      "title": "Đánh giá bàn phím cơ AKKO 5075B Plus: Switch Cream Yellow có gì hay?",
+      "summary": "Trải nghiệm gõ phím, độ hoàn thiện và mức giá của một trong những bàn phím cơ hot nhất hiện nay.",
+      "content": "AKKO 5075B Plus gây ấn tượng với cảm giác gõ êm nhờ switch Cream Yellow bôi trơn sẵn, thiết kế gasket-mount cho độ nảy tốt, cùng mức giá dễ tiếp cận với sinh viên và người mới bắt đầu tìm hiểu bàn phím cơ.",
+      "coverIcon": "⌨️",
+      "author": "Đội ngũ biên tập",
+      "createdAt": "2026-06-10"
+    },
+    {
+      "id": 3,
+      "title": "Hướng dẫn chọn màn hình gaming: 144Hz, 165Hz hay 240Hz là đủ?",
+      "summary": "Tần số quét nào là hợp lý theo từng thể loại game và cấu hình máy bạn đang sở hữu.",
+      "content": "Tần số quét cao giúp hình ảnh mượt mà hơn nhưng cần đi kèm cấu hình máy đủ mạnh để khai thác hết tiềm năng. Bài viết phân tích nên chọn 144Hz, 165Hz hay 240Hz tùy theo thể loại game (FPS, MOBA, hành động) và ngân sách của bạn.",
+      "coverIcon": "🖵",
+      "author": "Đội ngũ biên tập",
+      "createdAt": "2026-06-18"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": 33,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#1 ASUS ROG Strix G16 (2024) G614",
+      "detail": "",
+      "createdAt": "2026-10-06T03:12:31.747Z"
+    },
+    {
+      "id": 32,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#2 MSI Katana 15 B13V",
+      "detail": "",
+      "createdAt": "2026-10-06T03:12:15.530Z"
+    },
+    {
+      "id": 31,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#3 Acer Predator Helios Neo 16",
+      "detail": "",
+      "createdAt": "2026-10-06T03:11:57.980Z"
+    },
+    {
+      "id": 30,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#4 Lenovo Legion 5 Pro",
+      "detail": "",
+      "createdAt": "2026-10-06T03:11:39.982Z"
+    },
+    {
+      "id": 29,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#5 ASUS TUF Gaming A15",
+      "detail": "",
+      "createdAt": "2026-10-06T03:11:07.354Z"
+    },
+    {
+      "id": 28,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#6 Dell Alienware m16 R2",
+      "detail": "",
+      "createdAt": "2026-10-06T03:10:42.999Z"
+    },
+    {
+      "id": 27,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#6 Dell Alienware m16 R2",
+      "detail": "",
+      "createdAt": "2026-10-06T03:10:29.986Z"
+    },
+    {
+      "id": 26,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#7 PC GVN Intel i5 RTX 4060",
+      "detail": "",
+      "createdAt": "2026-10-06T03:09:31.779Z"
+    },
+    {
+      "id": 25,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#8 PC GVN Ryzen 5 RTX 4060 Ti",
+      "detail": "",
+      "createdAt": "2026-10-06T03:09:05.055Z"
+    },
+    {
+      "id": 24,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#9 PC GVN Intel i7 RTX 4070 Super",
+      "detail": "",
+      "createdAt": "2026-10-06T03:08:38.463Z"
+    },
+    {
+      "id": 23,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#10 PC GVN Ryzen 9 RTX 4080 Super",
+      "detail": "",
+      "createdAt": "2026-10-06T03:08:07.491Z"
+    },
+    {
+      "id": 22,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#11 LG UltraGear 27GP850",
+      "detail": "",
+      "createdAt": "2026-10-06T03:07:25.954Z"
+    },
+    {
+      "id": 21,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#12 ASUS TUF Gaming VG27AQ",
+      "detail": "",
+      "createdAt": "2026-10-06T03:07:07.440Z"
+    },
+    {
+      "id": 20,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#13 Samsung Odyssey G5",
+      "detail": "",
+      "createdAt": "2026-10-06T03:06:43.531Z"
+    },
+    {
+      "id": 19,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#14 AOC 24G2SP",
+      "detail": "",
+      "createdAt": "2026-10-06T03:06:21.373Z"
+    },
+    {
+      "id": 18,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#15 Logitech G Pro X Keyboard",
+      "detail": "",
+      "createdAt": "2026-10-06T03:05:54.041Z"
+    },
+    {
+      "id": 17,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#16 Razer BlackWidow V4",
+      "detail": "",
+      "createdAt": "2026-10-06T03:05:30.260Z"
+    },
+    {
+      "id": 16,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#17 AKKO 5075B Plus",
+      "detail": "",
+      "createdAt": "2026-10-06T03:05:05.815Z"
+    },
+    {
+      "id": 15,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#18 Corsair K70 RGB Pro",
+      "detail": "",
+      "createdAt": "2026-10-06T03:04:30.015Z"
+    },
+    {
+      "id": 14,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#19 Logitech G Pro X Superlight 2",
+      "detail": "",
+      "createdAt": "2026-10-06T03:03:56.319Z"
+    },
+    {
+      "id": 13,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#20 Razer DeathAdder V3",
+      "detail": "",
+      "createdAt": "2026-10-06T03:03:35.365Z"
+    },
+    {
+      "id": 12,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#21 SteelSeries Aerox 5 Wireless",
+      "detail": "",
+      "createdAt": "2026-10-06T03:03:04.374Z"
+    },
+    {
+      "id": 11,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#22 Corsair M75 Air Wireless",
+      "detail": "",
+      "createdAt": "2026-10-06T03:02:36.662Z"
+    },
+    {
+      "id": 10,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#23 SteelSeries Arctis Nova 5",
+      "detail": "",
+      "createdAt": "2026-10-06T03:01:57.696Z"
+    },
+    {
+      "id": 9,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#23 SteelSeries Arctis Nova 5",
+      "detail": "",
+      "createdAt": "2026-10-06T03:01:48.294Z"
+    },
+    {
+      "id": 8,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#23 SteelSeries Arctis Nova 5",
+      "detail": "",
+      "createdAt": "2026-10-06T03:00:55.574Z"
+    },
+    {
+      "id": 7,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#24 HyperX Cloud III",
+      "detail": "",
+      "createdAt": "2026-10-06T02:49:42.312Z"
+    },
+    {
+      "id": 6,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#25 Razer BlackShark V2 X",
+      "detail": "",
+      "createdAt": "2026-10-06T02:48:57.494Z"
+    },
+    {
+      "id": 5,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#26 Ghế Gaming DXRacer Air Series",
+      "detail": "",
+      "createdAt": "2026-10-06T02:48:10.966Z"
+    },
+    {
+      "id": 4,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#27 Bàn Gaming E-Dra Motorized EGD003",
+      "detail": "",
+      "createdAt": "2026-10-06T02:47:29.924Z"
+    },
+    {
+      "id": 3,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#29 RAM Corsair Vengeance 32GB (2x16GB) DDR5 6000MHz",
+      "detail": "",
+      "createdAt": "2026-10-06T02:46:36.930Z"
+    },
+    {
+      "id": 2,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#28 VGA Gigabyte RTX 4070 Super WINDFORCE",
+      "detail": "",
+      "createdAt": "2026-10-06T02:26:55.105Z"
+    },
+    {
+      "id": 1,
+      "adminId": 1,
+      "adminName": "Quản trị viên",
+      "action": "Sửa sản phẩm",
+      "target": "#29 RAM Corsair Vengeance 32GB (2x16GB) DDR5 6000MHz",
+      "detail": "",
+      "createdAt": "2026-10-06T02:25:35.819Z"
+    }
+  ]
+}
