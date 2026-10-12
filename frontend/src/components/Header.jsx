@@ -108,7 +108,7 @@ export default function Header() {
                   <Link to="/don-hang">Đơn hàng của tôi</Link>
                   <Link to="/thu-cu-doi-moi">Thu cũ - Đổi mới</Link>
                   {user.role === "admin" && <Link to="/admin">Trang quản trị</Link>}
-                  <button onClick={logout}>Đăng xuất</button>
+                  <button onClick={() => { logout(); navigate("/dang-ky"); }}>Đăng xuất</button>
                 </div>
               </div>
             ) : (
