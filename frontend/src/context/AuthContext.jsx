@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const loadMe = useCallback(async () => {
-    const token = localStorage.getItem("gvn_token");
+    const token = localStorage.getItem("gvn_token") || sessionStorage.getItem("gvn_token");
     if (!token) {
       setLoading(false);
       return;
@@ -18,6 +18,7 @@ export function AuthProvider({ children }) {
       setUser(data);
     } catch {
       localStorage.removeItem("gvn_token");
+      sessionStorage.removeItem("gvn_token");
       setUser(null);
     } finally {
       setLoading(false);
@@ -28,16 +29,20 @@ export function AuthProvider({ children }) {
     loadMe();
   }, [loadMe]);
 
-  function applySession(data) {
-    localStorage.setItem("gvn_token", data.token);
+  // remember = true: nhớ đăng nhập 7 ngày (localStorage, còn sau khi tắt trình duyệt)
+  // remember = false: chỉ nhớ đến khi đóng trình duyệt (sessionStorage)
+  function applySession(data, remember = true) {
+    localStorage.removeItem("gvn_token");
+    sessionStorage.removeItem("gvn_token");
+    (remember ? localStorage : sessionStorage).setItem("gvn_token", data.token);
     setUser(data.user);
     return data.user;
   }
 
-  async function login(identifier, password) {
+  async function login(identifier, password, remember = true) {
     try {
       const { data } = await api.post("/auth/login", { identifier, password });
-      return { ok: true, user: applySession(data) };
+      return { ok: true, user: applySession(data, remember) };
     } catch (err) {
       return { ok: false, message: errMsg(err, "Đăng nhập thất bại.") };
     }
@@ -72,6 +77,7 @@ export function AuthProvider({ children }) {
 
   function logout() {
     localStorage.removeItem("gvn_token");
+    sessionStorage.removeItem("gvn_token");
     setUser(null);
   }
 
