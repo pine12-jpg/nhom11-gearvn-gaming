@@ -10,6 +10,7 @@ export default function Login() {
   const from = location.state?.from?.pathname || "/";
 
   const [form, setForm] = useState({ identifier: "", password: "" });
+  const [remember, setRemember] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showGoogle, setShowGoogle] = useState(false);
@@ -19,7 +20,7 @@ export default function Login() {
     e.preventDefault();
     setError("");
     setLoading(true);
-    const r = await login(form.identifier, form.password);
+    const r = await login(form.identifier, form.password, remember);
     setLoading(false);
     if (r.ok) navigate(from, { replace: true });
     else setError(r.message);
@@ -51,6 +52,10 @@ export default function Login() {
               <input type="password" className="form-control" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
             </div>
             {error && <div className="alert alert-error">{error}</div>}
+            <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, cursor: "pointer", marginBottom: 8 }}>
+              <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+              Ghi nhớ đăng nhập trong 7 ngày
+            </label>
             <div className="flex justify-between items-center">
               <Link to="/quen-mat-khau" style={{ fontSize: 13 }}>Quên mật khẩu?</Link>
             </div>
