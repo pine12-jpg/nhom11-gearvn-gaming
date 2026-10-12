@@ -213,9 +213,22 @@ router.put("/users/:id/lock", (req, res) => {
   const u = users.find((x) => x.id === Number(req.params.id));
   if (!u) return res.status(404).json({ message: "Không tìm thấy tài khoản." });
   if (u.role === "admin") return res.status(400).json({ message: "Không thể khóa tài khoản quản trị viên." });
-  u.locked = !!req.body?.locked;
+  const wantLock = !!req.body?.locked;
+  let detail = "";
+  if (wantLock) {
+    // days > 0: khóa tạm thời N ngày; để trống / 0: khóa vĩnh viễn
+    const days = Math.round(Number(req.body?.days));
+    u.locked = true;
+    u.lockedUntil = Number.isFinite(days) && days > 0 ? new Date(Date.now() + days * 86400000).toISOString() : null;
+    u.lockReason = String(req.body?.reason || "").trim().slice(0, 300);
+    detail = (u.lockedUntil ? `${days} ngày` : "vĩnh viễn") + (u.lockReason ? ` — Lý do: ${u.lockReason}` : "");
+  } else {
+    u.locked = false;
+    delete u.lockedUntil;
+    delete u.lockReason;
+  }
   saveCollection("users", users);
-  auditLog(req.user, u.locked ? "Khóa tài khoản" : "Mở khóa tài khoản", `#${u.id} ${u.name}`);
+  auditLog(req.user, wantLock ? "Khóa tài khoản" : "Mở khóa tài khoản", `#${u.id} ${u.name}`, detail);
   res.json(publicUser(u));
 });
 

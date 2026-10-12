@@ -1,11 +1,13 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import api, { errMsg } from "../api/client";
+import LockedModal from "../components/LockedModal";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lockInfo, setLockInfo] = useState(null); // thông tin khóa để hiện bảng thông báo
 
   const loadMe = useCallback(async () => {
     const token = localStorage.getItem("gvn_token") || sessionStorage.getItem("gvn_token");
@@ -28,6 +30,18 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     loadMe();
   }, [loadMe]);
+
+  // Server báo tài khoản bị khóa => đăng xuất ngay và hiện bảng thông báo
+  useEffect(() => {
+    function onLocked(e) {
+      localStorage.removeItem("gvn_token");
+      sessionStorage.removeItem("gvn_token");
+      setUser(null);
+      setLockInfo(e.detail);
+    }
+    window.addEventListener("gvn:locked", onLocked);
+    return () => window.removeEventListener("gvn:locked", onLocked);
+  }, []);
 
   // remember = true: nhớ đăng nhập 7 ngày (localStorage, còn sau khi tắt trình duyệt)
   // remember = false: chỉ nhớ đến khi đóng trình duyệt (sessionStorage)
@@ -91,7 +105,12 @@ export function AuthProvider({ children }) {
     user, loading, isAuthenticated: !!user, isAdmin: user?.role === "admin",
     login, adminLogin, loginWithGoogleDemo, register, logout, refreshMe,
   };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+      {lockInfo && <LockedModal info={lockInfo} onClose={() => setLockInfo(null)} />}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {

@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const { nanoid } = require("nanoid");
 const { collection, saveCollection, nextId } = require("../db");
 const { signToken, authRequired } = require("../middleware/auth");
-const { publicUser, sendMail } = require("../helpers");
+const { publicUser, sendMail, activeLock, lockPayload } = require("../helpers");
 
 const router = express.Router();
 
@@ -53,7 +53,7 @@ router.post("/login", (req, res) => {
   const user = collection("users").find((u) => (u.email && u.email.toLowerCase() === id) || u.phone === identifier.trim());
   if (!user || !bcrypt.compareSync(password, user.passwordHash))
     return res.status(401).json({ message: "Tài khoản hoặc mật khẩu không đúng." });
-  if (user.locked) return res.status(403).json({ message: "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ cửa hàng." });
+  if (activeLock(user)) return res.status(403).json(lockPayload(user));
   res.json({ token: signToken(user), user: publicUser(user) });
 });
 
@@ -96,7 +96,7 @@ router.post("/google", (req, res) => {
     users.push(user);
     saveCollection("users", users);
   }
-  if (user.locked) return res.status(403).json({ message: "Tài khoản của bạn đã bị khóa." });
+  if (activeLock(user)) return res.status(403).json(lockPayload(user));
   res.json({ token: signToken(user), user: publicUser(user) });
 });
 

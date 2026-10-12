@@ -9,6 +9,9 @@ export default function AdminCustomers() {
   const [users, setUsers] = useState([]);
   const [q, setQ] = useState("");
   const toast = useToast();
+  const [lockTarget, setLockTarget] = useState(null); // tài khoản đang chọn để khóa
+  const [days, setDays] = useState("");
+  const [reason, setReason] = useState("");
 
   function load() {
     api.get("/admin/users").then(({ data }) => setUsers(data));
@@ -16,10 +19,30 @@ export default function AdminCustomers() {
   useEffect(load, []);
 
   async function toggleLock(u) {
-    if (!window.confirm(`${u.locked ? "Mở khóa" : "Khóa"} tài khoản "${u.name}"?`)) return;
+    if (u.locked) {
+      // Mở khóa ngay
+      if (!window.confirm(`Mở khóa tài khoản "${u.name}"?`)) return;
+      try {
+        await api.put(`/admin/users/${u.id}/lock`, { locked: false });
+        toast.success("Đã mở khóa tài khoản.");
+        load();
+      } catch (err) {
+        toast.error(errMsg(err));
+      }
+    } else {
+      // Mở bảng nhập số ngày khóa + lý do
+      setDays("");
+      setReason("");
+      setLockTarget(u);
+    }
+  }
+
+  async function confirmLock(e) {
+    e.preventDefault();
     try {
-      await api.put(`/admin/users/${u.id}/lock`, { locked: !u.locked });
-      toast.success(u.locked ? "Đã mở khóa tài khoản." : "Đã khóa tài khoản.");
+      await api.put(`/admin/users/${lockTarget.id}/lock`, { locked: true, days: Number(days) || 0, reason });
+      toast.success("Đã khóa tài khoản.");
+      setLockTarget(null);
       load();
     } catch (err) {
       toast.error(errMsg(err));
@@ -50,7 +73,7 @@ export default function AdminCustomers() {
                   <td>{u.orderCount}</td>
                   <td>{u.isHssv ? "✅" : "—"}</td>
                   <td>{formatDate(u.createdAt)}</td>
-                  <td>{u.locked ? <span className="badge badge-cancelled">Đã khóa</span> : <span className="badge badge-delivered">Hoạt động</span>}</td>
+                  <td>{u.locked ? <><span className="badge badge-cancelled">Đã khóa</span><div className="muted" style={{ fontSize: 12 }}>{u.lockedUntil ? `đến ${formatDate(u.lockedUntil)}` : "vĩnh viễn"}</div></> : <span className="badge badge-delivered">Hoạt động</span>}</td>
                   <td>
                     {u.role !== "admin" && (
                       <button className={`btn btn-sm ${u.locked ? "btn-outline" : "btn-danger"}`} onClick={() => toggleLock(u)}>
@@ -64,6 +87,29 @@ export default function AdminCustomers() {
           </table>
         </div>
       </div>
+
+      {lockTarget && (
+        <div className="modal-overlay" onClick={() => setLockTarget(null)}>
+          <form className="modal-box" style={{ maxWidth: 440 }} onClick={(e) => e.stopPropagation()} onSubmit={confirmLock}>
+            <div className="modal-head">
+              <h3>Khóa tài khoản: {lockTarget.name}</h3>
+              <button type="button" className="modal-close" onClick={() => setLockTarget(null)}>×</button>
+            </div>
+            <div className="form-group">
+              <label>Số ngày khóa</label>
+              <input type="number" min="0" className="form-control" value={days} onChange={(e) => setDays(e.target.value)} placeholder="VD: 7 (để trống hoặc 0 = khóa vĩnh viễn)" />
+            </div>
+            <div className="form-group">
+              <label>Lý do khóa (hiển thị cho khách)</label>
+              <textarea className="form-control" rows={3} value={reason} onChange={(e) => setReason(e.target.value)} placeholder="VD: Vi phạm chính sách mua hàng" />
+            </div>
+            <div className="flex justify-between" style={{ gap: 8 }}>
+              <button type="button" className="btn btn-outline" onClick={() => setLockTarget(null)}>Hủy</button>
+              <button className="btn btn-danger">Xác nhận khóa</button>
+            </div>
+          </form>
+        </div>
+      )}
     </AdminLayout>
   );
 }

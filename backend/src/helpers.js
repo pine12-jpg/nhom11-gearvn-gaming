@@ -32,12 +32,37 @@ function sendMail(to, subject, body) {
   console.log(`\n[MAIL] -> ${to}\n  Tiêu đề: ${subject}\n  ${body.replace(/\n/g, "\n  ")}\n`);
 }
 
+/**
+ * Khóa tài khoản có thời hạn:
+ *  - lockedUntil = null  => khóa vĩnh viễn (cho đến khi admin mở khóa)
+ *  - lockedUntil = ngày  => tự động hết khóa khi qua ngày đó
+ * Trả về null nếu tài khoản KHÔNG bị khóa (hoặc đã hết hạn khóa).
+ */
+function activeLock(u) {
+  if (!u || !u.locked) return null;
+  if (u.lockedUntil && new Date(u.lockedUntil).getTime() <= Date.now()) return null;
+  return { until: u.lockedUntil || null, reason: u.lockReason || "" };
+}
+
+/** Nội dung trả về cho khách khi tài khoản bị khóa (frontend dùng để hiện bảng thông báo) */
+function lockPayload(u) {
+  const l = activeLock(u);
+  return {
+    code: "ACCOUNT_LOCKED",
+    message: l && l.until ? "Tài khoản của bạn đang bị khóa tạm thời." : "Tài khoản của bạn đã bị khóa.",
+    lockedUntil: l ? l.until : null,
+    permanent: !!l && !l.until,
+    lockReason: l ? l.reason : "",
+  };
+}
+
 function publicUser(u) {
   if (!u) return null;
   const { passwordHash, resetToken, resetExpires, ...rest } = u;
+  rest.locked = !!activeLock(u); // trạng thái khóa thực tế (đã tính hạn khóa)
   return rest;
 }
 
 const formatVND = (n) => new Intl.NumberFormat("vi-VN").format(n) + "đ";
 
-module.exports = { auditLog, sendMail, publicUser, formatVND };
+module.exports = { auditLog, sendMail, publicUser, formatVND, activeLock, lockPayload };

@@ -1,4 +1,6 @@
 const jwt = require("jsonwebtoken");
+const { collection } = require("../db");
+const { activeLock, lockPayload } = require("../helpers");
 
 const JWT_SECRET = process.env.JWT_SECRET || "gvn-gaming-dev-secret-change-me";
 
@@ -17,10 +19,13 @@ function authRequired(req, res, next) {
   if (!token) return res.status(401).json({ message: "Bạn cần đăng nhập để thực hiện thao tác này." });
   try {
     req.user = jwt.verify(token, JWT_SECRET);
-    next();
   } catch (err) {
     return res.status(401).json({ message: "Phiên đăng nhập không hợp lệ hoặc đã hết hạn." });
   }
+  // Kiểm tra khóa tài khoản ở MỌI request => khách đang đăng nhập sẵn cũng bị chặn ngay khi admin khóa
+  const u = collection("users").find((x) => x.id === req.user.id);
+  if (u && activeLock(u)) return res.status(403).json(lockPayload(u));
+  next();
 }
 
 /** Cho phép request đi qua dù có hoặc không có token, gắn req.user nếu có */
