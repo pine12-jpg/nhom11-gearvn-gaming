@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const LINKS = [
@@ -20,7 +20,9 @@ export default function AdminLayout({ title, children }) {
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <div className="brand">
-          GVN<span>ADMIN</span>
+          <Link to="/admin" title="Về trang Tổng quan & Thống kê">
+            GVN<span>ADMIN</span>
+          </Link>
         </div>
         <nav>
           {LINKS.map((l) => (

@@ -486,6 +486,9 @@ table.data-table tr:hover td { background: var(--gray-50); }
 .admin-sidebar { background: var(--navy-950); color: #fff; padding: 18px 0; }
 .admin-sidebar .brand { padding: 0 18px 18px; font-weight: 800; font-size: 17px; border-bottom: 1px solid var(--navy-700); margin-bottom: 10px; }
 .admin-sidebar .brand span { color: var(--red-600); }
+/* Bấm logo GVNADMIN để về trang Tổng quan (ghi đè kiểu link của menu bên dưới) */
+.admin-sidebar .brand a { display: inline-block; padding: 0; gap: 0; font-size: inherit; color: inherit; background: none; border-right: none; transition: opacity .2s ease; }
+.admin-sidebar .brand a:hover { background: none; border-right: none; color: inherit; opacity: .8; }
 .admin-sidebar a { display: flex; align-items: center; gap: 10px; padding: 10px 18px; font-size: 13.8px; color: #cfd3da; }
 .admin-sidebar a:hover, .admin-sidebar a.active { background: var(--navy-800); color: #fff; border-right: 3px solid var(--red-600); }
 .admin-main { padding: 22px 26px; background: var(--gray-50); }
