@@ -1,3 +1,4 @@
+import PasswordInput from "../components/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api, { errMsg } from "../api/client";
@@ -72,7 +73,7 @@ export default function ForgotPassword() {
               </div>
               <div className="form-group">
                 <label>Mật khẩu mới</label>
-                <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <PasswordInput value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
               {error && <div className="alert alert-error">{error}</div>}
               <button className="btn btn-primary btn-block" disabled={loading}>{loading ? "Đang xử lý…" : "Đặt lại mật khẩu"}</button>

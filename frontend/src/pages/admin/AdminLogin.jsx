@@ -1,3 +1,4 @@
+import PasswordInput from "../../components/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -34,7 +35,7 @@ export default function AdminLogin() {
           </div>
           <div className="form-group">
             <label>Mật khẩu</label>
-            <input type="password" className="form-control" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
+            <PasswordInput value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
           </div>
           {error && <div className="alert alert-error">{error}</div>}
           <button className="btn btn-primary btn-block" disabled={loading}>{loading ? "Đang đăng nhập…" : "Đăng nhập quản trị"}</button>

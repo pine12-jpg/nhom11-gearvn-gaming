@@ -1,3 +1,4 @@
+import PasswordInput from "../components/PasswordInput";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -45,27 +46,27 @@ export default function Login() {
           <form onSubmit={submit} className="mt-16">
             <div className="form-group">
               <label>Email hoặc số điện thoại</label>
-              <input className="form-control" value={form.identifier} onChange={(e) => setForm((f) => ({ ...f, identifier: e.target.value }))} required />
+              <input className="form-control" placeholder="name@email.com hoặc 0xxxxxxxxx" autoComplete="username" value={form.identifier} onChange={(e) => setForm((f) => ({ ...f, identifier: e.target.value }))} required />
             </div>
             <div className="form-group">
               <label>Mật khẩu</label>
-              <input type="password" className="form-control" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
+              <PasswordInput placeholder="Nhập mật khẩu" autoComplete="current-password" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
             </div>
-            {error && <div className="alert alert-error">{error}</div>}
-            <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14, cursor: "pointer", marginBottom: 8 }}>
-              <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
-              Ghi nhớ đăng nhập trong 7 ngày
-            </label>
-            <div className="flex justify-between items-center">
-              <Link to="/quen-mat-khau" style={{ fontSize: 13 }}>Quên mật khẩu?</Link>
+            <div className="auth-options">
+              <label>
+                <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} />
+                Ghi nhớ đăng nhập
+              </label>
+              <Link to="/quen-mat-khau">Quên mật khẩu?</Link>
             </div>
+            {error && <div className="alert alert-error mt-16">{error}</div>}
             <button className="btn btn-primary btn-block mt-16" disabled={loading}>{loading ? "Đang đăng nhập…" : "Đăng nhập"}</button>
           </form>
 
           <div className="divider-or">hoặc</div>
 
           {!showGoogle ? (
-            <button className="btn-google" onClick={() => setShowGoogle(true)}>🇬 Đăng nhập nhanh bằng Google</button>
+            <button className="btn-google" onClick={() => setShowGoogle(true)}><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.1 5.3-4.5 7l7.1 5.5c4.2-3.8 6.6-9.5 6.6-17z"/><path fill="#FBBC05" d="M10.5 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.1-5.5c-2 1.4-4.9 2.3-8.8 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg> Đăng nhập nhanh bằng Google</button>
           ) : (
             <form onSubmit={submitGoogle}>
               <div className="form-hint mb-8">

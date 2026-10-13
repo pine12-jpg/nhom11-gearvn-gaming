@@ -1,3 +1,4 @@
+import PasswordInput from "../components/PasswordInput";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -46,11 +47,11 @@ export default function Register() {
             <div className="form-row">
               <div className="form-group">
                 <label>Mật khẩu</label>
-                <input type="password" className="form-control" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
+                <PasswordInput value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} required />
               </div>
               <div className="form-group">
                 <label>Nhập lại mật khẩu</label>
-                <input type="password" className="form-control" value={form.confirm} onChange={(e) => setForm((f) => ({ ...f, confirm: e.target.value }))} required />
+                <PasswordInput value={form.confirm} onChange={(e) => setForm((f) => ({ ...f, confirm: e.target.value }))} required />
               </div>
             </div>
             {error && <div className="alert alert-error">{error}</div>}
