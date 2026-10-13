@@ -249,7 +249,9 @@ p { margin: 0 0 10px; }
 .product-visual { width: 60%; height: 60%; filter: drop-shadow(0 6px 10px rgba(20,22,30,.14)); }
 .detail-thumb .product-visual { width: 54%; height: 54%; }
 /* Ảnh thật (img) được hiển thị lớn hơn và dùng object-fit thay vì drop-shadow của SVG */
-img.product-photo { width: 92%; height: 92%; object-fit: contain; filter: none; }
+img.product-photo,
+.detail-thumb img.product-photo { width: 100%; height: 100%; object-fit: contain; filter: none; mix-blend-mode: multiply; }
+.detail-thumb { overflow: hidden; }
 .mini-thumb img.product-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
 .cart-item .thumb img.product-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
 .mini-thumb {
