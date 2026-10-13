@@ -127,11 +127,31 @@ p { margin: 0 0 10px; }
 .account-dropdown a:hover, .account-dropdown button:hover { background: var(--gray-100); }
 
 .nav-bar { background: var(--navy-800); }
-.nav-bar .container { display: flex; gap: 4px; overflow-x: auto; }
+.nav-bar .container { position: relative; display: flex; gap: 4px; overflow-x: auto; padding-top: 5px; padding-bottom: 5px; }
 .nav-bar a {
-  display: block; padding: 11px 14px; font-size: 13.5px; font-weight: 600; color: #eef0f3; white-space: nowrap;
+  position: relative; z-index: 1; display: block; padding: 6px 14px; font-size: 13.5px; font-weight: 600;
+  color: #c9ced6; white-space: nowrap; border-radius: 8px;
+  transition: color .25s ease, background-color .25s ease;
 }
-.nav-bar a:hover, .nav-bar a.active { background: var(--red-600); color: #fff; }
+/* Hover: chỉ sáng nhẹ, không đỏ cả cụm */
+.nav-bar a:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+/* Mục đang chọn: chữ trắng, nền đỏ do khối .nav-indicator trượt tới */
+.nav-bar a.active, .nav-bar a.active:hover { color: #fff; background: transparent; }
+
+/* Khối đỏ trượt mượt giữa các mục menu */
+.nav-indicator {
+  position: absolute; top: 5px; bottom: 5px; left: 0; z-index: 0; border-radius: 8px;
+  background: linear-gradient(135deg, var(--red-600), #ff3b3b);
+  box-shadow: 0 4px 14px rgba(226, 18, 33, 0.45);
+  opacity: 0; pointer-events: none;
+}
+.nav-indicator.show { opacity: 1; }
+.nav-indicator.animate {
+  transition: transform .45s cubic-bezier(.65, 0, .35, 1), width .45s cubic-bezier(.65, 0, .35, 1), opacity .25s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-indicator.animate, .nav-bar a { transition: none; }
+}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-950); color: var(--gray-400); margin-top: 40px; padding: 40px 0 18px; font-size: 13.5px; }

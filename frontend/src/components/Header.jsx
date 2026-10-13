@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate, NavLink } from "react-router-dom";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import api from "../api/client";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
@@ -11,11 +11,44 @@ export default function Header() {
   const { user, isAuthenticated, logout } = useAuth();
   const { totalCount } = useCart();
   const navigate = useNavigate();
+  const location = useLocation();
   const [categories, setCategories] = useState([]);
   const [q, setQ] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggest, setShowSuggest] = useState(false);
   const boxRef = useRef(null);
+
+  // ----- Thanh menu: chỉ mục đang chọn mới sáng đỏ, khối đỏ trượt mượt giữa các mục -----
+  const navRef = useRef(null);
+  const [indicator, setIndicator] = useState({ x: 0, w: 0, show: false, animate: false });
+  const categoryParam = new URLSearchParams(location.search).get("category") || "";
+  const activeKey =
+    location.pathname === "/san-pham" ? `cat:${categoryParam}`
+    : location.pathname === "/so-sanh" ? "compare"
+    : "";
+  const navClass = (key) => (key === activeKey ? "active" : "");
+
+  useLayoutEffect(() => {
+    const box = navRef.current;
+    if (!box) return;
+    const measure = () => {
+      const el = box.querySelector("a.active");
+      if (!el) {
+        setIndicator((p) => ({ ...p, show: false }));
+        return;
+      }
+      setIndicator((p) => ({ x: el.offsetLeft, w: el.offsetWidth, show: true, animate: p.animate || p.show }));
+    };
+    measure();
+    // Cuộn mục đang chọn vào giữa khi thanh menu bị tràn (màn hình nhỏ)
+    const el = box.querySelector("a.active");
+    if (el && box.scrollWidth > box.clientWidth) {
+      box.scrollTo({ left: el.offsetLeft - (box.clientWidth - el.offsetWidth) / 2, behavior: "smooth" });
+    }
+    window.addEventListener("resize", measure);
+    document.fonts?.ready?.then(measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [activeKey, categories]);
 
   useEffect(() => {
     api.get("/categories").then(({ data }) => setCategories(data)).catch(() => {});
@@ -127,16 +160,20 @@ export default function Header() {
       </div>
 
       <nav className="nav-bar">
-        <div className="container">
-          <NavLink to="/san-pham" end className={({ isActive }) => (isActive ? "active" : "")}>
+        <div className="container" ref={navRef}>
+          <span
+            className={`nav-indicator${indicator.show ? " show" : ""}${indicator.animate ? " animate" : ""}`}
+            style={{ width: indicator.w, transform: `translateX(${indicator.x}px)` }}
+          />
+          <Link to="/san-pham" className={navClass("cat:")}>
             Tất cả sản phẩm
-          </NavLink>
+          </Link>
           {categories.map((c) => (
-            <NavLink key={c.id} to={`/san-pham?category=${c.slug}`}>
+            <Link key={c.id} to={`/san-pham?category=${c.slug}`} className={navClass(`cat:${c.slug}`)}>
               {c.icon} {c.name}
-            </NavLink>
+            </Link>
           ))}
-          <NavLink to="/so-sanh">So sánh sản phẩm</NavLink>
+          <Link to="/so-sanh" className={navClass("compare")}>So sánh sản phẩm</Link>
         </div>
       </nav>
     </header>
